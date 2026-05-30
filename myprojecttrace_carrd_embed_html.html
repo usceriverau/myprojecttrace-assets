@@ -1,0 +1,646 @@
+<!-- MyProjectTrace Landing Page Embed for Carrd
+Instructions:
+1) In Carrd, add: Embed > Code.
+2) Paste this full block.
+3) Replace IMAGE_URL_HERO and IMAGE_URL_DASHBOARD with your uploaded image URLs from Carrd.
+4) Replace the demo link in the buttons with your Calendly/Square/form link.
+-->
+
+<style>
+  :root {
+    --mpt-navy: #071b4d;
+    --mpt-blue: #0b5cff;
+    --mpt-light: #f6f9ff;
+    --mpt-text: #0f172a;
+    --mpt-muted: #475569;
+    --mpt-border: #dbe4f3;
+    --mpt-white: #ffffff;
+  }
+
+  .mpt-page, .mpt-page * {
+    box-sizing: border-box;
+  }
+
+  .mpt-page {
+    font-family: Inter, Arial, sans-serif;
+    color: var(--mpt-text);
+    background: var(--mpt-white);
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .mpt-wrap {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .mpt-header {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .mpt-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 25px;
+    color: var(--mpt-navy);
+    white-space: nowrap;
+  }
+
+  .mpt-logo-mark {
+    width: 42px;
+    height: 42px;
+    border: 3px solid var(--mpt-navy);
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .mpt-logo-mark::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 8px;
+    width: 26px;
+    height: 18px;
+    border-left: 4px solid var(--mpt-blue);
+    border-bottom: 4px solid var(--mpt-blue);
+    transform: skew(-20deg) rotate(-20deg);
+    border-radius: 4px;
+  }
+
+  .mpt-logo-mark::after {
+    content: "✓";
+    position: absolute;
+    right: -10px;
+    bottom: -9px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: var(--mpt-blue);
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+    display: grid;
+    place-items: center;
+  }
+
+  .mpt-logo span span { color: var(--mpt-blue); }
+
+  .mpt-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .mpt-nav a {
+    color: var(--mpt-text);
+    text-decoration: none;
+  }
+
+  .mpt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 9px;
+    background: var(--mpt-blue);
+    color: white !important;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 0 12px 24px rgba(11, 92, 255, 0.22);
+  }
+
+  .mpt-btn-outline {
+    background: white;
+    color: var(--mpt-blue) !important;
+    border: 2px solid var(--mpt-blue);
+    box-shadow: none;
+  }
+
+  .mpt-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    min-height: 620px;
+    align-items: center;
+    gap: 34px;
+    padding: 56px 0 34px;
+  }
+
+  .mpt-hero h1 {
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.02;
+    margin: 0 0 22px;
+    letter-spacing: -0.04em;
+  }
+
+  .mpt-blue-text { color: var(--mpt-blue); }
+
+  .mpt-lead {
+    color: var(--mpt-muted);
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 520px;
+    margin: 0 0 28px;
+  }
+
+  .mpt-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .mpt-trust {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: var(--mpt-navy);
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .mpt-hero-img {
+    min-height: 560px;
+    border-radius: 24px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.05)), url('IMAGE_URL_HERO') center/cover no-repeat;
+    position: relative;
+    box-shadow: 0 30px 70px rgba(15, 23, 42, 0.16);
+  }
+
+  .mpt-floating {
+    position: absolute;
+    right: 26px;
+    top: 90px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .mpt-float-card {
+    width: 170px;
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.16);
+    border: 1px solid var(--mpt-border);
+  }
+
+  .mpt-float-card strong {
+    display: block;
+    color: var(--mpt-navy);
+    margin-bottom: 4px;
+  }
+
+  .mpt-float-card small {
+    color: var(--mpt-muted);
+    line-height: 1.3;
+  }
+
+  .mpt-stats {
+    background: var(--mpt-navy);
+    color: white;
+    border-radius: 16px;
+    padding: 26px 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    box-shadow: 0 22px 45px rgba(7, 27, 77, 0.26);
+    margin: 10px auto 42px;
+  }
+
+  .mpt-stat {
+    border-right: 1px solid rgba(255,255,255,.25);
+    padding-right: 18px;
+  }
+
+  .mpt-stat:last-child { border-right: 0; }
+  .mpt-stat strong { font-size: 30px; display: block; }
+  .mpt-stat span { color: #dbeafe; font-weight: 700; }
+
+  .mpt-section {
+    padding: 52px 0;
+  }
+
+  .mpt-title {
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.05;
+    margin: 0 0 28px;
+    letter-spacing: -0.035em;
+  }
+
+  .mpt-feature-row {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 34px;
+    align-items: center;
+  }
+
+  .mpt-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .mpt-card {
+    border: 1px solid var(--mpt-border);
+    border-radius: 18px;
+    padding: 22px;
+    background: white;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  }
+
+  .mpt-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 2px solid var(--mpt-blue);
+    color: var(--mpt-blue);
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+    font-weight: 900;
+  }
+
+  .mpt-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--mpt-navy);
+  }
+
+  .mpt-card p {
+    margin: 0;
+    color: var(--mpt-muted);
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .mpt-phone {
+    width: 100%;
+    border-radius: 34px;
+    border: 10px solid #111827;
+    background: white;
+    box-shadow: 0 25px 55px rgba(15, 23, 42, 0.22);
+    padding: 18px;
+  }
+
+  .mpt-phone-screen {
+    border-radius: 20px;
+    background: #f8fafc;
+    padding: 18px;
+    min-height: 500px;
+  }
+
+  .mpt-screen-title {
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+
+  .mpt-receipt {
+    height: 165px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid var(--mpt-border);
+    display: grid;
+    place-items: center;
+    color: #64748b;
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+
+  .mpt-field {
+    background: white;
+    border: 1px solid var(--mpt-border);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .mpt-dashboard {
+    background: linear-gradient(135deg, #f8fbff, #eaf3ff);
+    border-radius: 22px;
+    padding: 34px;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 34px;
+    align-items: center;
+    border: 1px solid var(--mpt-border);
+  }
+
+  .mpt-laptop {
+    background: #111827;
+    border-radius: 18px;
+    padding: 14px;
+    box-shadow: 0 28px 60px rgba(15,23,42,.25);
+  }
+
+  .mpt-laptop-screen {
+    background: white;
+    border-radius: 10px;
+    min-height: 330px;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+  }
+
+  .mpt-sidebar {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 12px;
+    color: var(--mpt-navy);
+    font-weight: 800;
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+
+  .mpt-dash-main {
+    display: grid;
+    gap: 12px;
+  }
+
+  .mpt-mini-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .mpt-mini {
+    background: #f8fafc;
+    border: 1px solid var(--mpt-border);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .mpt-chart {
+    height: 95px;
+    border-radius: 12px;
+    border: 1px solid var(--mpt-border);
+    background: linear-gradient(135deg, rgba(11,92,255,.12), rgba(11,92,255,.02));
+  }
+
+  .mpt-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+    display: grid;
+    gap: 12px;
+    color: var(--mpt-text);
+    font-weight: 700;
+  }
+
+  .mpt-bullets li::before {
+    content: "✓";
+    background: var(--mpt-blue);
+    color: white;
+    width: 22px;
+    height: 22px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+
+  .mpt-steps {
+    text-align: center;
+  }
+
+  .mpt-step-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .mpt-step-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--mpt-blue);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    margin: 0 auto 12px;
+  }
+
+  .mpt-cta {
+    background: linear-gradient(135deg, #071b4d, #0b5cff);
+    color: white;
+    border-radius: 18px;
+    padding: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+
+  .mpt-cta h2 { margin: 0 0 8px; font-size: 32px; }
+  .mpt-cta p { margin: 0; color: #dbeafe; }
+
+  .mpt-footer {
+    background: #041334;
+    color: white;
+    padding: 40px 0 22px;
+    margin-top: 36px;
+  }
+
+  .mpt-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .mpt-footer h4 { margin: 0 0 12px; }
+  .mpt-footer p, .mpt-footer a {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.7;
+    text-decoration: none;
+    display: block;
+  }
+
+  .mpt-copy {
+    border-top: 1px solid rgba(255,255,255,.15);
+    margin-top: 28px;
+    padding-top: 18px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+  }
+
+  @media (max-width: 900px) {
+    .mpt-nav { display: none; }
+    .mpt-hero, .mpt-feature-row, .mpt-dashboard { grid-template-columns: 1fr; }
+    .mpt-hero-img { min-height: 470px; }
+    .mpt-stats, .mpt-cards, .mpt-step-grid, .mpt-footer-grid { grid-template-columns: 1fr; }
+    .mpt-stat { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.25); padding-bottom: 18px; }
+    .mpt-stat:last-child { border-bottom: 0; }
+    .mpt-cta { flex-direction: column; align-items: flex-start; }
+    .mpt-floating { display: none; }
+  }
+</style>
+
+<div class="mpt-page">
+  <header class="mpt-wrap mpt-header">
+    <div class="mpt-logo">
+      <div class="mpt-logo-mark"></div>
+      <span>My<span>Project</span>Trace</span>
+    </div>
+    <nav class="mpt-nav">
+      <a href="#features">Features</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="mpt-btn" href="https://calendly.com/" target="_blank">Request a Demo</a>
+  </header>
+
+  <main>
+    <section class="mpt-wrap mpt-hero">
+      <div>
+        <h1>Track Every Project.<br>Trace Every Record.<br><span class="mpt-blue-text">Build with Confidence.</span></h1>
+        <p class="mpt-lead">MyProjectTrace helps contractors and project owners capture, organize, and track every purchase, payment, and document in one powerful platform.</p>
+        <div class="mpt-actions">
+          <a class="mpt-btn" href="https://calendly.com/" target="_blank">Request a Demo</a>
+          <a class="mpt-btn mpt-btn-outline" href="#how">See How It Works</a>
+        </div>
+        <div class="mpt-trust">
+          <span>✓ Secure</span>
+          <span>•</span>
+          <span>Audit-Ready</span>
+          <span>•</span>
+          <span>Built for Construction</span>
+        </div>
+      </div>
+      <div class="mpt-hero-img" role="img" aria-label="Contractor uploading purchase receipt with MyProjectTrace">
+        <div class="mpt-floating">
+          <div class="mpt-float-card"><strong>Capture</strong><small>Take a photo of your receipt</small></div>
+          <div class="mpt-float-card"><strong>Extract</strong><small>AI reads the data instantly</small></div>
+          <div class="mpt-float-card"><strong>Connect</strong><small>Link to project and supplier</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mpt-wrap mpt-stats">
+      <div class="mpt-stat"><strong>100%</strong><span>Documented Purchases</span></div>
+      <div class="mpt-stat"><strong>10+ hrs</strong><span>Saved Per Week</span></div>
+      <div class="mpt-stat"><strong>Better</strong><span>Profitability Control</span></div>
+      <div class="mpt-stat"><strong>Audit Ready</strong><span>Always</span></div>
+    </section>
+
+    <section id="features" class="mpt-wrap mpt-section">
+      <div class="mpt-feature-row">
+        <div>
+          <h2 class="mpt-title">Everything You Need to<br><span class="mpt-blue-text">Control Your Projects</span></h2>
+          <div class="mpt-cards">
+            <div class="mpt-card"><div class="mpt-icon">📋</div><h3>Project Management</h3><p>Organize projects, budgets, timelines, and areas in one place.</p></div>
+            <div class="mpt-card"><div class="mpt-icon">🧾</div><h3>Purchase Tracking</h3><p>Capture invoices, extract data with OCR, and link purchases to the right project.</p></div>
+            <div class="mpt-card"><div class="mpt-icon">$</div><h3>Financial Control</h3><p>See real-time spending, profitability, and financial performance.</p></div>
+            <div class="mpt-card"><div class="mpt-icon">📷</div><h3>Photo & Document Evidence</h3><p>Store photos, documents, signatures, and supporting records.</p></div>
+            <div class="mpt-card"><div class="mpt-icon">👥</div><h3>Supplier Management</h3><p>Manage suppliers, purchase history, and provider performance.</p></div>
+            <div class="mpt-card"><div class="mpt-icon">📊</div><h3>Reports & Analytics</h3><p>Use practical reports to make better business decisions.</p></div>
+          </div>
+        </div>
+
+        <div class="mpt-phone">
+          <div class="mpt-phone-screen">
+            <div class="mpt-screen-title">New Purchase</div>
+            <div class="mpt-receipt">Receipt Photo</div>
+            <div class="mpt-field"><span>Supplier</span><strong>Home Depot</strong></div>
+            <div class="mpt-field"><span>Date</span><strong>May 15, 2024</strong></div>
+            <div class="mpt-field"><span>Amount</span><strong>$164.27</strong></div>
+            <div class="mpt-field"><span>Project</span><strong>Kitchen Renovation</strong></div>
+            <a class="mpt-btn" style="width:100%; margin-top:14px;" href="https://calendly.com/" target="_blank">Save Purchase</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mpt-wrap mpt-section">
+      <div class="mpt-dashboard">
+        <div class="mpt-laptop">
+          <div class="mpt-laptop-screen">
+            <div class="mpt-sidebar">
+              <span>Dashboard</span><span>Projects</span><span>Purchases</span><span>Payments</span><span>Suppliers</span><span>Reports</span>
+            </div>
+            <div class="mpt-dash-main">
+              <strong>Dashboard</strong>
+              <div class="mpt-mini-cards">
+                <div class="mpt-mini"><strong>24</strong><br>Projects</div>
+                <div class="mpt-mini"><strong>$245,752</strong><br>Total Spent</div>
+                <div class="mpt-mini"><strong>$80,540</strong><br>Profit</div>
+                <div class="mpt-mini"><strong>28.6%</strong><br>Margin</div>
+              </div>
+              <div class="mpt-chart"></div>
+              <div class="mpt-chart"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="mpt-title">Real-Time Visibility.<br><span class="mpt-blue-text">Better Decisions.</span></h2>
+          <p class="mpt-lead">Get a complete overview of your projects, finances, and performance in real time.</p>
+          <ul class="mpt-bullets">
+            <li>Track budgets vs. actuals</li>
+            <li>Monitor profitability by project</li>
+            <li>Identify overruns early</li>
+            <li>Make data-driven decisions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="mpt-wrap mpt-section mpt-steps">
+      <h2 class="mpt-title">How It <span class="mpt-blue-text">Works</span></h2>
+      <div class="mpt-step-grid">
+        <div class="mpt-card"><div class="mpt-step-num">1</div><h3>Capture</h3><p>Take a photo of your invoice or receipt.</p></div>
+        <div class="mpt-card"><div class="mpt-step-num">2</div><h3>Extract</h3><p>AI extracts the data automatically.</p></div>
+        <div class="mpt-card"><div class="mpt-step-num">3</div><h3>Connect</h3><p>Link it to the right project and supplier.</p></div>
+        <div class="mpt-card"><div class="mpt-step-num">4</div><h3>Done</h3><p>Your purchase is saved and fully traceable.</p></div>
+      </div>
+    </section>
+
+    <section class="mpt-wrap mpt-section">
+      <div class="mpt-cta">
+        <div>
+          <h2>Ready to Take Control of Your Projects?</h2>
+          <p>Join contractors and project owners who want better control over purchases, documents, and project records.</p>
+        </div>
+        <a class="mpt-btn" href="https://calendly.com/" target="_blank">Request a Demo →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="mpt-footer">
+    <div class="mpt-wrap">
+      <div class="mpt-footer-grid">
+        <div>
+          <div class="mpt-logo" style="color:white; margin-bottom:12px; font-size:20px;"><div class="mpt-logo-mark"></div><span>My<span>Project</span>Trace</span></div>
+          <p>The all-in-one platform to capture, organize, and trace every record of your construction projects.</p>
+        </div>
+        <div><h4>Product</h4><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#">Updates</a></div>
+        <div><h4>Solutions</h4><a href="#">Contractors</a><a href="#">Project Owners</a><a href="#">Subcontractors</a><a href="#">Construction Teams</a></div>
+        <div><h4>Company</h4><a href="#">About Us</a><a href="#contact">Contact</a><a href="#">Privacy Policy</a></div>
+        <div><h4>Contact Us</h4><p>hello@myprojecttrace.com</p><p>Texas, United States</p></div>
+      </div>
+      <div class="mpt-copy">© 2026 MyProjectTrace. All rights reserved.</div>
+    </div>
+  </footer>
+</div>
